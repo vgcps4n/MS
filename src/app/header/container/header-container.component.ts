@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {HeaderSandboxService} from "../header-sandbox.service";
 
 @Component({
   selector: 'header-container',
@@ -11,7 +12,6 @@ import { Component, OnInit } from '@angular/core';
         <span class="spacer"></span>
         <div>
           <a mat-button [routerLink]="['/login']">Бүртгэл</a>
-          <a mat-button [routerLink]="['/']">test</a>
           <a mat-button (click)="logout()" >Гарах</a>
         </div>
       </mat-toolbar-row>
@@ -21,12 +21,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderContainerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sb: HeaderSandboxService) { }
 
   ngOnInit(): void {
   }
 
   logout(): void {
-    console.log("logged out.");
+    this.sb.logout();
   }
 }
