@@ -1,0 +1,39 @@
+.actions {
+  float: right;
+}
+
+mat-dialog-content {
+  padding-top: 10px;
+  font-size: 0.8em;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.full {
+  padding: 0 5px 0 5px;
+  width: calc(100% - 10px);
+}
+
+.half {
+  padding: 0 5px 0 5px;
+  width: calc(50% - 10px);
+}
+
+.quarter {
+  padding: 0 5px 0 5px;
+  width: calc(25% - 10px);
+}
+
+.third {
+  padding: 0 5px 0 5px;
+  width: calc(100% / 3 - 10px);
+}
+
+.sixth {
+  padding: 0 5px 0 5px;
+  width: calc(100% / 6 - 10px);
+}

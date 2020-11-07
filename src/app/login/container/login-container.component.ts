@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {LoginSandboxService} from "../login-sandbox.service";
 import {Observable} from "rxjs";
 import {FormBuilder, FormGroup} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'login-container',
@@ -30,7 +31,10 @@ export class LoginContainerComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(private sb: LoginSandboxService, fb: FormBuilder) {
+  constructor(private sb: LoginSandboxService, private fb: FormBuilder, private router: Router) {
+    if (sb.isAuthenticated()) {
+      router.navigateByUrl('').then(r => console.log(r));
+    }
     this.loginForm = fb.group({
       username: [''],
       password: [''],

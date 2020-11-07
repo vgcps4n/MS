@@ -9,10 +9,11 @@ import {HeaderSandboxService} from "../header-sandbox.service";
         <a mat-button [routerLink]="['/']">
           <h1>Эмнэлгийн систем</h1>
         </a>
+        <a mat-button *ngIf="sb.isAuthenticated()" [routerLink]="['/']">Бүртгэл</a>
+        <a mat-button *ngIf="sb.isAuthenticated()" [routerLink]="['/examination']">Үзлэг</a>
         <span class="spacer"></span>
         <div>
-          <a mat-button [routerLink]="['/login']">Бүртгэл</a>
-          <a mat-button (click)="logout()" >Гарах</a>
+          <a mat-button *ngIf="sb.isAuthenticated()" (click)="logout()">Гарах</a>
         </div>
       </mat-toolbar-row>
     </mat-toolbar>
@@ -21,7 +22,11 @@ import {HeaderSandboxService} from "../header-sandbox.service";
 })
 export class HeaderContainerComponent implements OnInit {
 
-  constructor(private sb: HeaderSandboxService) { }
+  isAuthenticated: boolean;
+
+  constructor(public sb: HeaderSandboxService) {
+    this.isAuthenticated = sb.isAuthenticated();
+  }
 
   ngOnInit(): void {
   }

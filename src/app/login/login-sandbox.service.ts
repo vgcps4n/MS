@@ -1,16 +1,19 @@
 import { Injectable } from '@angular/core';
 import {Credentials} from "./model/login.model";
-import {AppService} from "../app.service";
-import {Observable} from "rxjs";
+import {AuthService} from "../auth.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginSandboxService {
 
-  constructor(private app: AppService) { }
+  constructor(private authService: AuthService) { }
 
   public authenticate(credentials: Credentials): void {
-    this.app.authenticate(credentials, () => console.log('authenticated.'));
+    this.authService.authenticate(credentials, () => console.log('authenticated.'));
+  }
+
+  public isAuthenticated(): boolean {
+    return this.authService.isAuthenticated();
   }
 }

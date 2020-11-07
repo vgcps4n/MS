@@ -1,0 +1,47 @@
+.ms-table {
+  margin: 0 1% 1%;
+  height: calc(100vh - 192px - 1%);
+  width: 98%;
+  overflow-x: auto;
+  .mat-table {
+    width: 100%;
+    max-width: 100%;
+    display: table;
+    border-collapse: collapse;
+  }
+  .mat-row,
+  .mat-header-row {
+    display: table-row;
+  }
+  .mat-row:hover {
+    background-color: whitesmoke;
+    cursor: pointer;
+    transition: 500ms ease-out;
+  }
+  .mat-cell,
+  .mat-header-cell {
+    word-wrap: initial;
+    display: table-cell;
+    padding: 0 5px;
+    line-break: unset;
+    width: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+  }
+}
+
+.empty {
+  height: calc(100vh - 255px - 1%);
+  line-height: calc(100vh - 255px - 1%);
+  background-color: lightgray;
+  text-align: center;
+  color: dimgrey;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.context-holder {
+  visibility: hidden;
+  position: fixed;
+}

@@ -1,6 +1,14 @@
 {
-  "/api": {
-    "target": "http://localhost:9000",
-    "secure": false
+  "/aim": {
+    "target": "http://localhost:9001",
+    "secure": true
+  },
+  "/patients": {
+    "target": "http://localhost:9002",
+    "secure": true
+  },
+  "/exams": {
+    "target": "http://localhost:9003",
+    "secure": true
   }
 }
